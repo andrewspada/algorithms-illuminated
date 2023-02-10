@@ -1,0 +1,1 @@
+Hello. This repo is where I'll put my implementations of algorithms and my solutions to programming problems as I read the book Algorithms Illuminated by Tim Roughgarden. 
