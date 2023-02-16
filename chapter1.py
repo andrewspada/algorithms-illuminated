@@ -12,12 +12,7 @@ def MergeSort(a):
 # c and d are sorted
 # len(c) > 0 and len(d) > 0
 # len(c) may be > len(d) and vice versa
-# b is the accumulator
-# call with MergeRec([], b, c)
 
-# Merge([1,3,5,7], [2,4,6,8]) == [1,2,3,4,5,6,7,8]
-# Merge([1,3], [2,4,6,8]) == [1,2,3,4,6,8]
-# Merge([1,3,5,7], [2,4]) == [1,2,3,4,5,7]
 def MergeRec(c, d):
     """Produces a list made up of the elements of c and d in order"""
     return MergeRecHelper([], c, d)
@@ -32,3 +27,8 @@ def MergeRecHelper(b, c, d):
             return MergeRecHelper(b + [c[0]], c[1:], d)
         else:
             return MergeRecHelper(b + [d[0]], c, d[1:])
+
+# Examples/Tests:
+assert MergeRec([1,3,5,7], [2,4,6,8]) == [1,2,3,4,5,6,7,8]
+assert MergeRec([1,3], [2,4,6,8]) == [1,2,3,4,6,8]
+assert MergeRec([1,3,5,7], [2,4]) == [1,2,3,4,5,7]
