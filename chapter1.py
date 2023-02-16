@@ -1,13 +1,20 @@
 import math
 
+# len(a) >= 0
+# a may have repeated elements
 def MergeSort(a):
+    """Sorts the list a"""
     n = len(a)
     if n == 0 or n == 1:
         return a
     mid = math.floor(len(a)/2)
     c = MergeSort(a[:mid])
     d = MergeSort(a[mid:])
-    return MergeRec([], c, d)
+    return MergeRec(c, d)
+
+assert MergeSort([]) == []
+assert MergeSort([1]) == [1]
+assert MergeSort([6,2,7,2,2,9,22,1]) == [1,2,2,2,6,7,9,22]
 
 # c and d are sorted
 # len(c) > 0 and len(d) > 0
