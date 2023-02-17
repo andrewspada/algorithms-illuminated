@@ -89,4 +89,33 @@ assert MergeSort([]) == []
 assert MergeSort([1]) == [1]
 assert MergeSort([6,2,7,2,2,9,22,1]) == [1,2,2,2,6,7,9,22]
 
+def Min(a):
+    """Returns the smallest element of a"""
+    min = a[0]
+    for e in a[1:]:
+        if e < min:
+            min = e
+    return min
+
+# Examples/Tests
+assert Min([1,2,3]) == 1
+assert Min([-1,-2,-3]) == -3
+assert Min([0]) == 0
+
+def SelectionSortHelper(a, result):
+    if a == []:
+        return result
+    else:
+        result.append(Min(a))
+        a.remove(Min(a))
+        return SelectionSortHelper(a, result)
+
+def SelectionSortRec(a):
+    """Returns a sorted list of the elements of a. Clears a."""
+    return SelectionSortHelper(a, [])
+        
+# Examples/Tests
+assert SelectionSortRec([]) == []
+assert SelectionSortRec([1]) == [1]
+assert SelectionSortRec([6,2,7,2,2,9,22,1]) == [1,2,2,2,6,7,9,22]
 
