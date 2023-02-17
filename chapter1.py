@@ -28,6 +28,7 @@ assert MergeRec([1,3,5,7], [2,4]) == [1,2,3,4,5,7]
 # Notes on lists: if i is a list L's index, then i is only valid when 0 <= i < len(L)
 # In Python, L[len(L)] is invalid, but L[len(L):] is the empty list.
 # If L is an empty list, then L[0] is invalid, but L[:1] is the empty list.
+# If L is nonempty, then L[0] is the first element, and L[:1] is a list holding L's first element.
 # L + [] = L; L.append([]) adds an empty list to the end of L
 # If e is an element, L + e is invalid; L + [e] *returns* L with e added to the end, but doesn't modify it as in L.append(e).
 def Merge(c, d):
